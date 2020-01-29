@@ -1,23 +1,23 @@
 from tkinter import*
 
-def btnclick(numbers):
+def btnclick(numbers):   #define the button(btn)click function
     global operator
     operator=operator + str(numbers)
     text_Input.set(operator)
 
-def btnClearDisplay():
+def btnClearDisplay():   # define the clear function
     global operator
     operator=""
     text_Input.set("")
 
-def btnEqualsInput():
+def btnEqualsInput():     #define the Equal to function
     global operator
     sumup=str(eval(operator))
     text_Input.set(sumup)
     operators=""
 
 cal = Tk()
-cal.title("Calculator")
+cal.title("Calculator")       # name the app, i choose a "Calculator" because it's random
 operator = ""
 text_Input = StringVar()
 
@@ -30,10 +30,10 @@ btnclear=Button(cal,padx=16,pady=16,bd=8, fg="black",font=('arial', 20,'bold'),
 BtnM=Button(cal,padx=16,pady=16,bd=8, fg="black",font=('arial', 20,'bold'),
             text="M",bg="powder blue",).grid(row=1,column="1")
 
-Btnbrac1=Button(cal,padx=16,pady=16,bd=8, fg="black",font=('arial', 20,'bold'),
+Btnbraket1=Button(cal,padx=16,pady=16,bd=8, fg="black",font=('arial', 20,'bold'),
             text="(",bg="powder blue",command=lambda:btnclick("(")).grid(row=1,column="2")
 
-Btnbrac1=Button(cal,padx=16,pady=16,bd=8, fg="black",font=('arial', 20,'bold'),
+Btnbracket2=Button(cal,padx=16,pady=16,bd=8, fg="black",font=('arial', 20,'bold'),
             text=")",bg="powder blue",command=lambda:btnclick(")")).grid(row=1,column="3")
 #=======================================================================================================================
 
