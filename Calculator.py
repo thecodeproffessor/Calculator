@@ -18,23 +18,28 @@ def btnEqualsInput():     #define the Equal to function
 
 cal = Tk()
 cal.title("Calculator")       # name the app, i choose a "Calculator" because it's random
+cal.geometry("360x588")
+cal.maxsize(360,588)
+cal.minsize(360,588)
 operator = ""
 text_Input = StringVar()
 
+
+
 txtDisplay = Entry(cal,font=('arial', 20,'bold'), textvariable=text_Input, bd=30, insertwidth=4,
-                   bg="powder blue", justify='right').grid(columnspan=4) 
+                   bg="powder blue", justify='right').grid(columnspan=4)
 
-btnclear=Button(cal,padx=16,pady=16,bd=8, fg="black",font=('arial', 20,'bold'),
-            text="C",bg="powder blue",command=btnClearDisplay).grid(row=1,column="0")
+btnclear=Button(cal,padx=16,pady=16,bd=8, fg="white",font=('arial', 19,'bold'),
+            text="C",bg="crimson",command=btnClearDisplay).grid(row=1,column="0")
 
-BtnM=Button(cal,padx=16,pady=16,bd=8, fg="black",font=('arial', 20,'bold'),
-            text="M",bg="powder blue",).grid(row=1,column="1")
+BtnM=Button(cal,padx=16,pady=16,bd=8, fg="black",font=('arial', 17,'bold'),
+            text="M",bg="#7FFFD4",).grid(row=1,column="1",ipady=3)
 
-Btnbraket1=Button(cal,padx=16,pady=16,bd=8, fg="black",font=('arial', 20,'bold'),
-            text="(",bg="powder blue",command=lambda:btnclick("(")).grid(row=1,column="2")
+Btnbraket1=Button(cal,padx=16,pady=16,bd=8, fg="black",font=('arial', 19,'bold'),
+            text="(",bg="#7FFFD4",command=lambda:btnclick("(")).grid(row=1,column="2",ipadx=5)
 
-Btnbracket2=Button(cal,padx=16,pady=16,bd=8, fg="black",font=('arial', 20,'bold'),
-            text=")",bg="powder blue",command=lambda:btnclick(")")).grid(row=1,column="3")
+Btnbracket2=Button(cal,padx=16,pady=16,bd=8, fg="black",font=('arial', 19,'bold'),
+            text=")",bg="#7FFFD4",command=lambda:btnclick(")")).grid(row=1,column="3",ipadx=1)
 #=======================================================================================================================
 
 btn7=Button(cal,padx=16,pady=16,bd=8, fg="black",font=('arial', 20,'bold'),
@@ -46,8 +51,8 @@ btn8=Button(cal,padx=16,pady=16,bd=8, fg="black",font=('arial', 20,'bold'),
 btn9=Button(cal,padx=16,pady=16,bd=8, fg="black",font=('arial', 20,'bold'),
             text="9", bg="powder blue",command=lambda:btnclick(9)).grid(row=2,column="2")
 
-Division=Button(cal,padx=16,pady=16,bd=8, fg="black",font=('arial', 20,'bold'),
-            text="/",bg="powder blue",command=lambda:btnclick("/")).grid(row=2,column="3")
+Division=Button(cal,padx=16,pady=16,bd=8, fg="yellow",font=('arial', 20,'bold'),
+            text="/",bg="#2F4F4F",command=lambda:btnclick("/")).grid(row=2,column="3")
 #===========================================================================================================================
 
 btn6=Button(cal,padx=16,pady=16,bd=8, fg="black",font=('arial', 20,'bold'),
@@ -59,8 +64,8 @@ btn5=Button(cal,padx=16,pady=16,bd=8, fg="black",font=('arial', 20,'bold'),
 btn4=Button(cal,padx=16,pady=16,bd=8, fg="black",font=('arial', 20,'bold'),
             text="4",bg="powder blue",command=lambda:btnclick(4)).grid(row=3,column="2")
 
-subtraction=Button(cal,padx=16,pady=16,bd=8, fg="black",font=('arial', 20,'bold'),
-            text="-",bg="powder blue",command=lambda:btnclick("-")).grid(row=3,column="3")
+subtraction=Button(cal,padx=16,pady=16,bd=8, fg="yellow",font=('arial', 20,'bold'),
+            text="-",bg="#2F4F4F",command=lambda:btnclick("-")).grid(row=3,column="3")
 #===============================================================================================================================
 
 btn3=Button(cal,padx=16,pady=16,bd=8, fg="black",font=('arial', 20,'bold'),
@@ -72,21 +77,21 @@ btn2=Button(cal,padx=16,pady=16,bd=8, fg="black",font=('arial', 20,'bold'),
 btn1=Button(cal,padx=16,pady=16,bd=8, fg="black",font=('arial', 20,'bold'),
             text="1",bg="powder blue",command=lambda:btnclick(1)).grid(row=4,column="2")
 
-Multiplication=Button(cal,padx=16,pady=16,bd=8, fg="black",font=('arial', 20,'bold'),
-            text="*",bg="powder blue",command=lambda:btnclick("*")).grid(row=4,column="3")
+Multiplication=Button(cal,padx=16,pady=16,bd=8, fg="yellow",font=('arial', 17,'bold'),
+            text="x",bg="#2F4F4F",command=lambda:btnclick("*")).grid(row=4,column="3",ipady=4)
 #==================================================================================================================================
 
 Btn0=Button(cal,padx=16,pady=16,bd=8, fg="black",font=('arial', 20,'bold'),
             text="0",bg="powder blue",command=lambda:btnclick(0)).grid(row=5,column="0")
 
 Dot=Button(cal,padx=16,pady=16,bd=8, fg="black",font=('arial', 20,'bold'),
-            text=".",bg="powder blue",command=lambda:btnclick(".")).grid(row=5,column="1")
+            text=".",bg="#7FFFD4",command=lambda:btnclick(".")).grid(row=5,column="1",ipadx=3)
 
 Equal=Button(cal,padx=16,pady=16,bd=8, fg="black",font=('arial', 20,'bold'),
-            text="=",bg="powder blue",command=btnEqualsInput).grid(row=5,column="2")
+            text="=",bg="#9ACD32",command=btnEqualsInput).grid(row=5,column="2")
 
-Addition=Button(cal,padx=16,pady=16,bd=8, fg="black",font=('arial', 20,'bold'),
-            text="+",bg="powder blue",command=lambda:btnclick("+")).grid(row=5,column="3")
+Addition=Button(cal,padx=16,pady=16,bd=8, fg="yellow",font=('arial', 16,'bold'),
+            text="+",bg="#2F4F4F",command=lambda:btnclick("+")).grid(row=5,column="3",ipady=6)
 
 
 
